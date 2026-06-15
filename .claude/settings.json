@@ -1,0 +1,32 @@
+{
+  "hooks": {
+    "MessageDisplay": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:1919/claude/hooks/message-display"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/ushid/Documents/FablePlaysPokemon/.claude/statusline-forward.ps1 -Url http://127.0.0.1:1919/claude/statusline",
+    "refreshInterval": 5
+  },
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "1000000",
+    "OTEL_LOGS_EXPORTER": "otlp",
+    "OTEL_EXPORTER_OTLP_PROTOCOL": "http/json",
+    "OTEL_EXPORTER_OTLP_LOGS_ENDPOINT": "http://127.0.0.1:1919/v1/logs",
+    "OTEL_LOGS_EXPORT_INTERVAL": "2000"
+  },
+  "autoUpdatesChannel": "latest",
+  "autoMemoryEnabled": false,
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "dark",
+  "model": "claude-fable-5[1m]"
+}
